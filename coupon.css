@@ -1,0 +1,412 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow-x:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top,
+    #46318f 0%,
+    #281657 28%,
+    #170d35 58%,
+    #0d061e 100%);
+
+    position:relative;
+
+}
+
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle,#fff 1.2px,transparent 1.2px),
+    radial-gradient(circle,#fff 2px,transparent 2px);
+
+    background-size:
+
+    140px 140px,
+    220px 220px;
+
+    opacity:.7;
+
+}
+
+
+.nebula{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.4;
+
+}
+
+
+.nebula1{
+
+    width:500px;
+    height:500px;
+
+    background:#7c3aed;
+
+    top:-150px;
+    left:-100px;
+
+}
+
+
+.nebula2{
+
+    width:600px;
+    height:600px;
+
+    background:#9333ea;
+
+    right:-150px;
+    top:200px;
+
+}
+
+
+.nebula3{
+
+    width:450px;
+    height:450px;
+
+    background:#6d28d9;
+
+    left:35%;
+    bottom:-180px;
+
+}
+
+
+
+/* ==========================================
+   MOON
+========================================== */
+
+
+.moon{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    white,
+    #fff7d8,
+    #efe4c9);
+
+    box-shadow:
+
+    0 0 40px rgba(255,255,255,.5);
+
+}
+
+
+.moon-glow{
+
+    position:absolute;
+
+    top:0;
+
+    right:20px;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.15),
+    transparent 70%);
+
+}
+
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+
+.coupon-container{
+
+    width:100%;
+
+    max-width:1000px;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    z-index:10;
+
+}
+
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+
+.coupon-container h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:70px;
+
+    color:#ffb4dd;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.subtitle{
+
+    color:white;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    margin-bottom:45px;
+
+}
+
+
+
+
+/* ==========================================
+   COUPONS
+========================================== */
+
+
+.coupons{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+
+
+
+.coupon{
+
+    background:
+
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,.18),
+    rgba(255,255,255,.08)
+    );
+
+
+    backdrop-filter:blur(15px);
+
+
+    border:1px solid rgba(255,255,255,.25);
+
+
+    border-radius:25px;
+
+
+    padding:35px 25px;
+
+
+    color:white;
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.3);
+
+
+    transition:.4s;
+
+}
+
+
+
+.coupon:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.stamp{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.coupon h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#ffd166;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.coupon p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+
+
+.coupon span{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#ffb4dd;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+
+.continue-btn{
+
+    display:inline-block;
+
+    margin-top:50px;
+
+    padding:15px 40px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff7eb3,
+    #b8325a
+    );
+
+    transition:.3s;
+
+}
+
+
+.continue-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+.coupons{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.coupon-container h1{
+
+    font-size:50px;
+
+}
+
+
+.moon{
+
+    right:20px;
+
+    width:90px;
+
+    height:90px;
+
+}
+
+
+}

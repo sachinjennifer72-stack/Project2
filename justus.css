@@ -1,0 +1,393 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    overflow-x:hidden;
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at top,
+    #46318f 0%,
+    #281657 28%,
+    #170d35 58%,
+    #0d061e 100%);
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.night-sky{
+
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+}
+
+.nebula{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.45;
+
+    animation:nebulaMove 18s ease-in-out infinite alternate;
+
+}
+
+.nebula1{
+
+    width:520px;
+    height:520px;
+
+    background:#6d28d9;
+
+    top:-120px;
+    left:-100px;
+
+}
+
+.nebula2{
+
+    width:650px;
+    height:650px;
+
+    background:#9333ea;
+
+    right:-150px;
+    top:200px;
+
+}
+
+.nebula3{
+
+    width:450px;
+    height:450px;
+
+    background:#7e22ce;
+
+    left:35%;
+    bottom:-150px;
+
+}
+
+@keyframes nebulaMove{
+
+    from{
+
+        transform:translateY(0) scale(1);
+
+    }
+
+    to{
+
+        transform:translateY(-35px) scale(1.08);
+
+    }
+
+}
+
+/* ==========================================
+   MOON
+========================================== */
+
+.moon{
+
+    position:absolute;
+
+    top:70px;
+    right:120px;
+
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #ffffff,
+    #fff7d8,
+    #efe4c9);
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.65),
+    0 0 80px rgba(255,255,255,.25);
+
+}
+
+.moon-glow{
+
+    position:absolute;
+
+    top:10px;
+    right:20px;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.15),
+    transparent 70%);
+
+    filter:blur(30px);
+
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(circle,#fff 1.2px,transparent 1.2px),
+    radial-gradient(circle,#fff 2px,transparent 2px),
+    radial-gradient(circle,#fff .8px,transparent .8px);
+
+    background-size:
+    140px 140px,
+    220px 220px,
+    90px 90px;
+
+    opacity:.8;
+
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.adventure-container{
+
+    width:100%;
+    max-width:1200px;
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    animation:fadeUp 1s ease;
+
+}
+
+.adventure-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    color:#ffb4dd;
+
+}
+
+.adventure-subtitle{
+
+    margin:20px auto 60px;
+
+    color:white;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+.adventure-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.adventure-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.adventure-card:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 20px 45px rgba(255,180,221,.25);
+
+}
+
+.icon{
+
+    font-size:50px;
+
+}
+
+.adventure-card h2{
+
+    margin:20px 0 15px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:30px;
+
+}
+
+.adventure-card p{
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    opacity:.9;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:60px;
+
+}
+
+.navigation a{
+
+    text-decoration:none;
+
+    padding:14px 34px;
+
+    border-radius:40px;
+
+    color:white;
+
+    background:
+    linear-gradient(135deg,#b8325a,#8d1e42);
+
+    transition:.35s;
+
+}
+
+.navigation a:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .adventure-title{
+
+        font-size:52px;
+
+    }
+
+    .adventure-subtitle{
+
+        font-size:20px;
+
+    }
+
+    .navigation{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        align-items:center;
+
+    }
+
+}
+.navigation{
+    position:relative;
+    z-index:50;
+}
+
+.navigation a{
+    position:relative;
+    z-index:50;
+    cursor:pointer;
+}

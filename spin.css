@@ -1,0 +1,693 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top,
+    #46318f 0%,
+    #281657 28%,
+    #170d35 58%,
+    #0d061e 100%);
+
+    position:relative;
+
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(circle,#fff 1.2px,transparent 1.2px),
+    radial-gradient(circle,#fff 2px,transparent 2px);
+
+    background-size:
+    140px 140px,
+    220px 220px;
+
+    opacity:.7;
+
+}
+
+.nebula{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.4;
+
+}
+
+.nebula1{
+
+    width:500px;
+    height:500px;
+
+    background:#7c3aed;
+
+    top:-150px;
+    left:-100px;
+
+}
+
+.nebula2{
+
+    width:600px;
+    height:600px;
+
+    background:#9333ea;
+
+    right:-150px;
+    top:200px;
+
+}
+
+.nebula3{
+
+    width:450px;
+    height:450px;
+
+    background:#6d28d9;
+
+    left:35%;
+    bottom:-180px;
+
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.spin-container{
+
+    text-align:center;
+
+    z-index:10;
+
+}
+
+.spin-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:68px;
+
+    color:#ffb4dd;
+
+}
+
+.spin-subtitle{
+
+    color:white;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:24px;
+
+    margin:18px 0 35px;
+
+}
+
+/* ==========================================
+   POINTER
+========================================== */
+
+.pointer{
+
+    font-size:42px;
+
+    color:#ffd166;
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================
+   WHEEL
+========================================== */
+
+.wheel-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    transform:translateY(-30px);
+}
+
+.wheel{
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    border:10px solid white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:transform 5s ease-out;
+
+    box-shadow:
+
+        0 0 35px rgba(255,255,255,.3);
+
+    background:
+    conic-gradient(
+
+    #ffb3c6 0deg 45deg,
+    #ffd6a5 45deg 90deg,
+    #fdffb6 90deg 135deg,
+    #caffbf 135deg 180deg,
+    #9bf6ff 180deg 225deg,
+    #a0c4ff 225deg 270deg,
+    #bdb2ff 270deg 315deg,
+    #ffc6ff 315deg 360deg
+
+    );
+
+}
+
+/* ==========================================
+   CENTER
+========================================== */
+
+.center-circle{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,0%);
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:38px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.3s;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.4),
+        0 0 40px rgba(255,180,221,.35);
+
+}
+
+.center-circle:hover{
+
+    transform:translate(-50%,-50%) scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.7),
+        0 0 50px rgba(255,180,221,.6);
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.spin-btn{
+
+    margin-top:40px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:white;
+
+    background:linear-gradient(135deg,#ff7eb3,#b8325a);
+
+    transition:.3s;
+
+}
+
+.spin-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   RESULT
+========================================== */
+
+.result{
+
+    display:none;
+
+    width:430px;
+
+    margin:35px auto 0;
+
+    padding:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    animation:fadeIn .8s ease;
+
+}
+.result h2{
+
+    font-size:34px;
+
+    font-family:'Great Vibes',cursive;
+
+    color:#ffb4dd;
+
+    margin-bottom:12px;
+
+}
+.result p{
+
+    font-size:18px;
+
+    font-family:'Poppins',sans-serif;
+
+    line-height:1.8;
+
+    color:white;
+
+}
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   NEXT BUTTON
+========================================== */
+
+.next-adventure{
+
+    display:none;
+
+    margin-top:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#8b5cf6,#c084fc);
+
+}
+.result h2{
+
+    color:#ffb4dd;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:52px;
+
+    margin-bottom:15px;
+
+}
+
+.result p{
+
+    color:white;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+}
+
+.spin-btn:disabled{
+
+    opacity:.8;
+
+    cursor:default;
+
+}
+.night-sky,
+.stars,
+.nebula,
+.moon,
+.moon-glow{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+}
+
+.spin-container{
+
+    position:relative;
+
+    z-index:10;
+    
+}
+/* ==========================================
+   WHEEL LABELS
+========================================== */
+
+.slice{
+
+    position:absolute;
+
+    width:50%;
+    height:50%;
+
+    left:50%;
+    top:50%;
+
+    transform-origin:0% 0%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    pointer-events:none;
+
+}
+
+.slice span{
+
+    width:120px;
+
+    text-align:center;
+
+    color:#4a235a;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transform:translateY(20px);
+
+}
+
+/* 8 Positions */
+
+.s1{
+
+    transform:rotate(0deg);
+
+}
+
+.s2{
+
+    transform:rotate(45deg);
+
+}
+
+.s3{
+
+    transform:rotate(90deg);
+
+}
+
+.s4{
+
+    transform:rotate(135deg);
+
+}
+
+.s5{
+
+    transform:rotate(180deg);
+
+}
+
+.s6{
+
+    transform:rotate(225deg);
+
+}
+
+.s7{
+
+    transform:rotate(270deg);
+
+}
+
+.s8{
+
+    transform:rotate(315deg);
+
+}
+.tap-text{
+
+    margin-top:20px;
+
+    color:#fff;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+    opacity:.9;
+
+}
+/* ==========================================
+   SURPRISE POPUP
+========================================== */
+
+.popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(10,5,30,.75);
+
+    backdrop-filter:blur(8px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:100;
+
+}
+
+
+.popup-card{
+
+    width:420px;
+
+    padding:40px 35px;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.08)
+    );
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.45),
+
+    0 0 40px rgba(255,180,221,.25);
+
+    animation:popupShow .8s ease;
+
+}
+
+
+.popup-card h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#ffb4dd;
+
+    margin-bottom:20px;
+
+}
+
+
+.popup-emoji{
+
+    font-size:65px;
+
+    margin:15px 0;
+
+}
+
+
+.popup-card h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:32px;
+
+    color:#ffd166;
+
+    margin-bottom:20px;
+
+}
+
+
+.popup-card p{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    color:white;
+
+}
+
+
+.continue-btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 35px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:16px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff7eb3,
+        #b8325a
+    );
+
+    transition:.3s;
+
+}
+
+
+.continue-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8) translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) translateY(0);
+
+    }
+
+}

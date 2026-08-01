@@ -1,0 +1,371 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    overflow-x:hidden;
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    display:flex;
+    justify-content:center;
+
+    background:
+    radial-gradient(circle at top,
+    #46318f 0%,
+    #281657 28%,
+    #170d35 58%,
+    #0d061e 100%);
+
+    position:relative;
+
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.night-sky{
+
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+}
+
+.nebula{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.45;
+
+    animation:nebulaMove 18s ease-in-out infinite alternate;
+
+}
+
+.nebula1{
+
+    width:520px;
+    height:520px;
+
+    background:#6d28d9;
+
+    top:-120px;
+    left:-100px;
+
+}
+
+.nebula2{
+
+    width:650px;
+    height:650px;
+
+    background:#9333ea;
+
+    right:-150px;
+    top:200px;
+
+}
+
+.nebula3{
+
+    width:450px;
+    height:450px;
+
+    background:#7e22ce;
+
+    left:35%;
+    bottom:-150px;
+
+}
+
+@keyframes nebulaMove{
+
+    from{
+
+        transform:translateY(0) scale(1);
+
+    }
+
+    to{
+
+        transform:translateY(-35px) scale(1.08);
+
+    }
+
+}
+
+.stars{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+
+    radial-gradient(circle,#fff 1.2px,transparent 1.2px),
+    radial-gradient(circle,#fff 2px,transparent 2px),
+    radial-gradient(circle,#fff .8px,transparent .8px);
+
+    background-size:
+
+    140px 140px,
+    220px 220px,
+    90px 90px;
+
+    opacity:.8;
+
+}
+
+.moon{
+
+    position:absolute;
+
+    top:70px;
+    right:120px;
+
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle at 30% 30%,
+    #ffffff,
+    #fff7d8,
+    #efe4c9);
+
+    box-shadow:
+
+    0 0 40px rgba(255,255,255,.65),
+    0 0 80px rgba(255,255,255,.25);
+
+}
+
+.moon-glow{
+
+    position:absolute;
+
+    top:10px;
+    right:20px;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(255,255,255,.15),
+    transparent 70%);
+
+    filter:blur(30px);
+
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.album-container{
+
+    width:100%;
+    max-width:1300px;
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    animation:fadeUp 1s ease;
+
+}
+
+.album-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    color:#ffb4dd;
+
+}
+
+.album-subtitle{
+
+    margin-top:15px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:28px;
+
+    color:#ffffff;
+
+}
+/* ==========================================
+   PHOTO GALLERY
+========================================== */
+
+.gallery{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:45px;
+
+    justify-items:center;
+
+}
+
+/* ==========================================
+   POLAROID PHOTO
+========================================== */
+
+.photo{
+
+    width:250px;
+
+    background:#ffffff;
+
+    padding:15px 15px 55px;
+
+    border-radius:6px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    position:relative;
+
+    transition:.4s ease;
+
+    cursor:pointer;
+
+}
+
+/* Push Pin */
+
+.photo::before{
+
+    content:"📌";
+
+    position:absolute;
+
+    top:-18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:28px;
+
+}
+
+/* Image */
+
+.photo img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:3px;
+
+}
+
+/* Hover Effect */
+
+.photo:hover{
+
+    transform:scale(1.08) rotate(0deg);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+
+    z-index:100;
+
+}
+.photo1{ transform:rotate(-5deg); }
+
+.photo2{ transform:rotate(4deg); }
+
+.photo3{ transform:rotate(-3deg); }
+
+.photo4{ transform:rotate(6deg); }
+
+.photo5{ transform:rotate(-4deg); }
+
+.photo6{ transform:rotate(2deg); }
+
+.photo7{ transform:rotate(-6deg); }
+
+.photo8{ transform:rotate(5deg); }
+
+.photo9{ transform:rotate(-2deg); }
+
+.photo10{ transform:rotate(3deg); }
+
+.photo11{ transform:rotate(-5deg); }
+
+.photo12{ transform:rotate(4deg); }
+
+.photo13{ transform:rotate(-3deg); }
+
+.photo14{ transform:rotate(6deg); }
+
+.photo15{ transform:rotate(-4deg); }
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:70px;
+
+    position:relative;
+
+    z-index:999;
+
+}
+
+.navigation a{
+
+    text-decoration:none;
+
+    padding:14px 34px;
+
+    border-radius:40px;
+
+    color:white;
+
+    background:linear-gradient(135deg,#b8325a,#8d1e42);
+
+    transition:.35s;
+
+}
+
+.navigation a:hover{
+
+    transform:translateY(-4px);
+
+}
